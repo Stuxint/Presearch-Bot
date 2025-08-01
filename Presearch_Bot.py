@@ -43,9 +43,8 @@ actions = ActionChains(web)
 login = web.find_element('xpath', '//*[@id="Home"]/div[1]/div[3]/div/div[2]/div[2]/div/div/button[1]')
 login.click()
 
-for x in range(38):
-    actions.send_keys(Keys.TAB).perform()
-actions.send_keys(Keys.ENTER).perform()
+login2 = web.find_element('xpath', '//*[@id="user-info"]/div[3]/div/div[4]/div[5]/a[1]')
+login2.click()
 
 time.sleep(2)
 answer = model.generate_content([prompt], stream=False)
